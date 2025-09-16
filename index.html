@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harrie's Pancakes - Order Online | Since 1986</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">HARRIE'S PANCAKES</div>
+            <div class="established">SINCE 1986</div>
+            <div class="tagline">We have been serving delectable savoury and sweet pancakes for over thirty years</div>
+            <div class="welcome-text">
+                WELCOME | WELKOM | SIYAALEMUKELA | KAMOGELO | KAMOHELO | SONDZELA<br>
+                Whether your taste is for savoury or sweet you won't find a better pancake in South Africa
+            </div>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('menu')">Menu & Order</button>
+            <button class="tab-btn" onclick="showTab('booking')">Table Booking</button>
+            <button class="tab-btn" onclick="showTab('cart')">Cart & Checkout</button>
+            <button class="tab-btn" onclick="showTab('locations')">Our Locations</button>
+        </div>
+
+        <!-- Menu Tab -->
+        <div id="menu" class="tab-content active">
+            <div class="special-note">
+                <strong>Special Notes:</strong> Eggless Pancakes available on request (no additional charge) | 
+                Gluten-free pancakes available (+R25) | Service charge not included - staff appreciates generous gratuity
+            </div>
+
+            <!-- Sweet Pancakes -->
+            <div class="menu-section">
+                <h3>🍯 SWEET FILLINGS</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <h4>Cinnamon & Sugar</h4>
+                        <div class="description">Classic sweet pancake with cinnamon and sugar</div>
+                        <div class="price">R 25.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('cinnamon-sugar', -1)">-</button>
+                            <input type="number" class="quantity-input" id="cinnamon-sugar-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('cinnamon-sugar', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('cinnamon-sugar', 'Cinnamon & Sugar', 25.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Black Cherries in Liqueur</h4>
+                        <div class="description">Premium black cherries in liqueur (contains alcohol)</div>
+                        <div class="price">R 110.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('black-cherries', -1)">-</button>
+                            <input type="number" class="quantity-input" id="black-cherries-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('black-cherries', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('black-cherries', 'Black Cherries in Liqueur', 110.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Cinnamon Sugar, Banana & Caramel Sauce</h4>
+                        <div class="description">Sweet pancake with banana and rich caramel sauce</div>
+                        <div class="price">R 85.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('banana-caramel', -1)">-</button>
+                            <input type="number" class="quantity-input" id="banana-caramel-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('banana-caramel', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('banana-caramel', 'Cinnamon Sugar, Banana & Caramel Sauce', 85.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Dark Chocolate Mousse</h4>
+                        <div class="description">Rich dark chocolate mousse filling</div>
+                        <div class="price">R 98.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('chocolate-mousse', -1)">-</button>
+                            <input type="number" class="quantity-input" id="chocolate-mousse-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('chocolate-mousse', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('chocolate-mousse', 'Dark Chocolate Mousse', 98.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Milk Tart Custard</h4>
+                        <div class="description">Traditional South African milk tart custard with cinnamon sugar</div>
+                        <div class="price">R 95.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('milk-tart', -1)">-</button>
+                            <input type="number" class="quantity-input" id="milk-tart-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('milk-tart', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('milk-tart', 'Cinnamon Sugar & Milk Tart Custard', 95.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Nutella</h4>
+                        <div class="description">Classic Nutella spread</div>
+                        <div class="price">R 80.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('nutella', -1)">-</button>
+                            <input type="number" class="quantity-input" id="nutella-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('nutella', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('nutella', 'Nutella', 80.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Savoury Pancakes -->
+            <div class="menu-section">
+                <h3>🥓 SAVOURY FILLINGS</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <h4>Chicken and Mushrooms with Cashew Nuts</h4>
+                        <div class="description">Tender chicken with mushrooms and cashew nuts</div>
+                        <div class="price">R 135.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('chicken-mushroom', -1)">-</button>
+                            <input type="number" class="quantity-input" id="chicken-mushroom-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('chicken-mushroom', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('chicken-mushroom', 'Chicken and Mushrooms with Cashew Nuts', 135.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Smoked Trout Fillet</h4>
+                        <div class="description">Smoked trout fillet with cucumber ribbons & horseradish cream</div>
+                        <div class="price">R 165.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('smoked-trout', -1)">-</button>
+                            <input type="number" class="quantity-input" id="smoked-trout-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('smoked-trout', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('smoked-trout', 'Smoked Trout Fillet with Cucumber Ribbons & Horseradish Cream', 165.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Biltong with Mozzarella Cheese</h4>
+                        <div class="description">Traditional South African biltong with mozzarella</div>
+                        <div class="price">R 135.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('biltong', -1)">-</button>
+                            <input type="number" class="quantity-input" id="biltong-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('biltong', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('biltong', 'Biltong with Mozzarella Cheese', 135.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Bobotie with Chutney Vinaigrette</h4>
+                        <div class="description">Traditional South African bobotie (contains almonds)</div>
+                        <div class="price">R 125.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('bobotie', -1)">-</button>
+                            <input type="number" class="quantity-input" id="bobotie-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('bobotie', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('bobotie', 'Bobotie with Chutney Vinaigrette', 125.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Dutch Bacon Bits with Cheddar Cheese</h4>
+                        <div class="description">Bacon bits baked into the batter with cheddar cheese</div>
+                        <div class="price">R 125.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('dutch-bacon', -1)">-</button>
+                            <input type="number" class="quantity-input" id="dutch-bacon-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('dutch-bacon', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('dutch-bacon', 'Dutch Bacon Bits baked into the Batter with Cheddar Cheese', 125.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Savoury Mince with Grated Cheddar Cheese</h4>
+                        <div class="description">Traditional savoury mince with cheese</div>
+                        <div class="price">R 115.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('savoury-mince', -1)">-</button>
+                            <input type="number" class="quantity-input" id="savoury-mince-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('savoury-mince', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('savoury-mince', 'Savoury Mince with grated Cheddar Cheese', 115.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breakfast (if before 11am) -->
+            <div class="menu-section">
+                <h3>🍳 BREAKFAST (Served until 11:00)</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <h4>Traditional Breakfast</h4>
+                        <div class="description">Two eggs, mushrooms, two pork sausages, tomato, three rashers of bacon, toast, preserve & small juice</div>
+                        <div class="price">R 115.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('traditional-breakfast', -1)">-</button>
+                            <input type="number" class="quantity-input" id="traditional-breakfast-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('traditional-breakfast', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('traditional-breakfast', 'Traditional Breakfast', 115.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Dullstroom Breakfast</h4>
+                        <div class="description">Three eggs scrambled with trout & chives on toast</div>
+                        <div class="price">R 165.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('dullstroom-breakfast', -1)">-</button>
+                            <input type="number" class="quantity-input" id="dullstroom-breakfast-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('dullstroom-breakfast', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('dullstroom-breakfast', 'Dullstroom Breakfast', 165.00)">Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item">
+                        <h4>Pancake Breakfast</h4>
+                        <div class="description">Pancake filled with bacon bits, scrambled egg, served with relish & grated cheese</div>
+                        <div class="price">R 135.00</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity('pancake-breakfast', -1)">-</button>
+                            <input type="number" class="quantity-input" id="pancake-breakfast-qty" value="1" min="1">
+                            <button class="quantity-btn" onclick="changeQuantity('pancake-breakfast', 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('pancake-breakfast', 'Pancake Breakfast', 135.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Tab -->
+        <div id="booking" class="tab-content">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #8B4513;">Reserve Your Table</h2>
+            <div class="special-note">
+                <strong>Please Note:</strong> 10% service fee will be added for groups larger than eight people. 
+                For immediate booking assistance, call your preferred location directly.
+            </div>
+            
+            <form class="booking-form" onsubmit="submitBooking(event)">
+                <div class="form-group">
+                    <label for="book-name">Full Name *</label>
+                    <input type="text" id="book-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-phone">Phone Number *</label>
+                    <input type="tel" id="book-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-email">Email Address *</label>
+                    <input type="email" id="book-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-location">Preferred Location *</label>
+                    <select id="book-location" name="location" required>
+                        <option value="">Select location</option>
+                        <option value="Dullstroom">Dullstroom</option>
+                        <option value="Graskop">Graskop</option>
+                        <option value="Pretoria">Pretoria</option>
+                        <option value="Cullinan">Cullinan</option>
+                        <option value="Clarens">Clarens</option>
+                        <option value="Harrismith">Harrismith</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="book-date">Date *</label>
+                    <input type="date" id="book-date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-time">Time *</label>
+                    <input type="time" id="book-time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-guests">Number of Guests *</label>
+                    <input type="number" id="book-guests" name="guests" min="1" max="30" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="book-notes">Special Requests</label>
+                    <textarea id="book-notes" name="notes" rows="2" placeholder="Allergies, accessibility, etc."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Book Table</button>
+            </form>
+        </div>
+        <!-- Cart & Checkout Tab (placeholder) -->
+        <div id="cart" class="tab-content">
+            <div id="cart-content">
+                <div class="cart-summary empty-cart">Your cart is empty. Add some pancakes!</div>
+            </div>
+            <div id="checkout-section" style="display:none; margin-top:30px;">
+                <form id="checkout-form" class="checkout-form" onsubmit="submitCheckout(event)">
+                    <div class="form-group">
+                        <label for="checkout-name">Full Name *</label>
+                        <input type="text" id="checkout-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-phone">Phone Number *</label>
+                        <input type="tel" id="checkout-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-email">Email Address *</label>
+                        <input type="email" id="checkout-email" name="email" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="checkout-notes">Order Notes</label>
+                        <textarea id="checkout-notes" name="notes" rows="2" placeholder="Delivery instructions, allergies, etc."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Place Order</button>
+                </form>
+            </div>
+        </div>
+        <!-- Locations Tab (placeholder) -->
+        <div id="locations" class="tab-content">
+            <div class="location-info">
+                <h4>Dullstroom</h4>
+                <div>123 Main St, Dullstroom, Mpumalanga</div>
+                <div>Tel: 013 254 1712</div>
+            </div>
+            <div class="location-info">
+                <h4>Graskop</h4>
+                <div>45 Panorama Dr, Graskop, Mpumalanga</div>
+                <div>Tel: 013 767 1273</div>
+            </div>
+            <div class="location-info">
+                <h4>Pretoria</h4>
+                <div>789 Lynnwood Rd, Pretoria, Gauteng</div>
+                <div>Tel: 012 348 1234</div>
+            </div>
+            <div class="location-info">
+                <h4>Cullinan</h4>
+                <div>22 Oak Ave, Cullinan, Gauteng</div>
+                <div>Tel: 012 734 0567</div>
+            </div>
+            <div class="location-info">
+                <h4>Clarens</h4>
+                <div>5 Main St, Clarens, Free State</div>
+                <div>Tel: 058 256 1234</div>
+            </div>
+            <div class="location-info">
+                <h4>Harrismith</h4>
+                <div>101 Berg St, Harrismith, Free State</div>
+                <div>Tel: 058 623 4567</div>
+            </div>
+        </div>
+    </div>
+    <div id="notification" class="notification"></div>
+    <script>
+        // Tab switching logic
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.tab-btn[onclick*="${tabId}"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+        // Notification logic
+        function showNotification(message) {
+            const notif = document.getElementById('notification');
+            notif.textContent = message;
+            notif.classList.add('show');
+            setTimeout(() => notif.classList.remove('show'), 2500);
+        }
+        // Quantity controls
+        function changeQuantity(id, delta) {
+            const input = document.getElementById(id + '-qty');
+            let val = parseInt(input.value) || 1;
+            val = Math.max(1, val + delta);
+            input.value = val;
+        }
+        // Cart logic (simple demo)
+        let cart = [];
+        function addToCart(id, name, price) {
+            const qty = parseInt(document.getElementById(id + '-qty').value) || 1;
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({ id, name, price, qty });
+            }
+            showNotification(`${name} x${qty} added to cart!`);
+            updateCartSummary();
+        }
+        function updateCartSummary() {
+            const cartContent = document.getElementById('cart-content');
+            const checkoutSection = document.getElementById('checkout-section');
+            if (!cart.length) {
+                cartContent.innerHTML = '<div class="cart-summary empty-cart">Your cart is empty. Add some pancakes!</div>';
+                checkoutSection.style.display = 'none';
+                return;
+            }
+            let html = '<div class="cart-summary">';
+            let total = 0;
+            cart.forEach(item => {
+                html += `<div class="cart-item">${item.name} x${item.qty} <span>R ${(item.price * item.qty).toFixed(2)}</span> <button class="remove-item" onclick="removeFromCart('${item.id}')">Remove</button></div>`;
+                total += item.price * item.qty;
+            });
+            html += `<div class="cart-total">Total: R ${total.toFixed(2)}</div>`;
+            html += '<button class="submit-btn" style="margin-top:20px; width:100%;" onclick="showCheckout()">Checkout</button>';
+            html += '</div>';
+            cartContent.innerHTML = html;
+            checkoutSection.style.display = 'none';
+        }
+
+        function showCheckout() {
+            document.getElementById('checkout-section').style.display = 'block';
+            document.getElementById('checkout-form').scrollIntoView({behavior:'smooth'});
+        }
+
+        function submitCheckout(e) {
+            e.preventDefault();
+            // You could send order to server here
+            showNotification('Order placed! Thank you for your purchase.');
+            cart = [];
+            updateCartSummary();
+            e.target.reset();
+            document.getElementById('checkout-section').style.display = 'none';
+        }
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartSummary();
+        }
+        // Booking form logic (demo only)
+        function submitBooking(e) {
+            e.preventDefault();
+            showNotification('Booking submitted! We will contact you soon.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
